@@ -1,0 +1,20 @@
+/*
+* Core.css V1.0.0
+* Copyright 2018, Terris Kremer
+* www.terrisjkremer.com
+*/
+
+/* Base
+================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-appearance: none; }
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+html,body {
+  background: #5d677a;
+  background-image: linear-gradient(to right, #445065, #4a566a, #505b6f, #576175, #5d677a);
+  color: #fff;
+  font-family: 'IBM Plex Sans', sans-serif;
+}

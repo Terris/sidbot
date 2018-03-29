@@ -1,0 +1,9 @@
+.course__tile {
+  position: relative;
+  border-right: 1px dashed #ccc;
+  border-bottom: 1px dashed #ccc;
+  border-top: 1px dashed #ccc;
+  width: 100px;
+  height: 100px;
+}
+.course__tile:first-child { border-left: 1px dashed #ccc; }

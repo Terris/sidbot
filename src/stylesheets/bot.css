@@ -1,0 +1,25 @@
+.bot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  width: 20px;
+  height: 20px;
+
+  background: #582020;
+  border-radius: 100px;
+}
+.bot::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  z-index: 999;
+  width: 10px;
+  height: 10px;
+  background: #582020;
+  border-right: 2px solid #311111;
+  border-bottom: 2px solid #311111;
+
+  transform: rotate(-45deg);
+}
