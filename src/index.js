@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import registerServiceWorker from './registerServiceWorker';
-import Course from './components/Course.js';
+import Course from './components/Course';
 import reducers from './reducers';
 
 // Create Store with Middleware
