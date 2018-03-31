@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { resetCourse } from '../actions';
+import { resetCourse, moveBotLeft, moveBotRight } from '../actions';
 import { connect } from 'react-redux';
 import Tile from './Tile';
 import '../stylesheets/course.css';
@@ -23,16 +23,22 @@ class Course extends Component {
       return <div>Loading...</div>
     }
     return(
-      <div className="course">
-        {this.renderTiles()}
+      <div>
+        <div className="course">
+          {this.renderTiles()}
+        </div>
+        <div className="controls">
+          <button onClick={this.props.moveBotLeft}>Move Left</button>
+          <button onClick={this.props.moveBotRight}>Move Right</button>
+        </div>
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  const { course } = state;
-  return { course }
+  const { course, bot } = state;
+  return { course, bot }
 }
 
-export default connect(mapStateToProps, { resetCourse })(Course)
+export default connect(mapStateToProps, { resetCourse, moveBotLeft, moveBotRight })(Course)

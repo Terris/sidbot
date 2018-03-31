@@ -13,6 +13,7 @@ const store = createStoreWithMiddleware(reducers)
 ReactDOM.render(
   <Provider store={store}>
     <div>
+      <h1 className="logo">SidBot</h1>
       <Course />
     </div>
   </Provider>

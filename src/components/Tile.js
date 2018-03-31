@@ -6,7 +6,9 @@ import '../stylesheets/tile.css';
 class Tile extends Component {
   renderTile() {
     if (this.props.bot.tile_id === this.props.tile.id) {
-      return(<Bot bot={this.props.bot} />)
+      return(
+        <Bot bot={this.props.bot} />
+      )
     }
   }
   render() {
