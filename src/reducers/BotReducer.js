@@ -12,6 +12,6 @@ export default function(state = initialState, action) {
     case botConstants.MOVE_BOT_RIGHT:
       return {...state, tile_id: state.tile_id +1, transition: "infromleft" };
     default:
-      return state;
+      return {...state};
   }
 };

@@ -16,9 +16,9 @@ class Bot extends Component {
   }
 
   render() {
-    const transitionClass= this.props.bot.transition;
+    const { bot } = this.props;
     return(
-      <CSSTransition in={this.state.enter} classNames={transitionClass} timeout={2000}>
+      <CSSTransition in={this.state.enter} classNames={bot.transition} timeout={2000}>
         <div className="bot"></div>
       </CSSTransition>
     )

@@ -5,6 +5,6 @@ export default function(state = {}, action) {
     case courseConstants.RESET_COURSE:
       return action.payload;
     default:
-      return state;
+      return {...state};
   }
 };

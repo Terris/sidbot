@@ -22,6 +22,7 @@ html,body {
 body, button { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.5rem; }
 body { padding: 36px; }
 h1,h2,h3,h4,h5,h6,p,ul,ol { padding: 10px; }
+hr { height: 0; border: none; border-bottom: 1px solid #fff; margin: 20px 10px; }
 
 button {
   padding: 10px 20px;
@@ -37,4 +38,4 @@ input:focus,
 textarea:focus {
   outline:0;
 }
-.logo { text-align: center; }
+button[disabled] { background: #ccc; cursor: not-allowed; }

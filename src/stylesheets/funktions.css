@@ -1,0 +1,15 @@
+.funktions_wrapper {
+  width: 45%;
+}
+.funktions {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.funktion {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #fff;
+  color: #ccc;
+  cursor: pointer;
+}

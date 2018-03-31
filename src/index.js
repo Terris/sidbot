@@ -4,7 +4,9 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import registerServiceWorker from './registerServiceWorker';
 import Course from './components/Course';
+import Terminal from './components/Terminal';
 import reducers from './reducers';
+import './stylesheets/index.css';
 
 // Create Store with Middleware
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -15,6 +17,8 @@ ReactDOM.render(
     <div>
       <h1 className="logo">SidBot</h1>
       <Course />
+      <hr />
+      <Terminal />
     </div>
   </Provider>
   , document.getElementById('root'));

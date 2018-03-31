@@ -1,0 +1,4 @@
+.terminal {
+  display: flex;
+  justify-content: space-between;
+}

@@ -21,7 +21,7 @@ class Tile extends Component {
 }
 function mapStateToProps(state) {
   const { bot } = state;
-  return { bot }
+  return { bot };
 }
 
 export default connect(mapStateToProps)(Tile);

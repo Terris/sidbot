@@ -1,0 +1,18 @@
+.program_wrapper {
+  width: 45%;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+
+}
+.program_funktion {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px dashed #fff;
+  color: #ccc;
+}
+
+.program_funktion.has_funktion {
+  border: 1px solid #fff;
+}
