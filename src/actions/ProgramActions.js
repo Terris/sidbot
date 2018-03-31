@@ -12,6 +12,12 @@ export function programRunning() {
   }
 }
 
+export function programFinished() {
+  return {
+    type: programConstants.PROGRAM_FINISHED
+  }
+}
+
 export function addProgramFunktion(funktion_id) {
   return {
     type: programConstants.ADD_PROGRAM_FUNKTION,

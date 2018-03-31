@@ -1,2 +1,5 @@
 .logo { text-align: center; }
 .mod { padding: 10px; }
+.btn-group { display: flex; justify-content: space-between;}
+.btn-red { background: #9a1818; }
+.btn-red:hover { background: #b11d1d; }

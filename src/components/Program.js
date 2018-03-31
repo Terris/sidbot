@@ -1,14 +1,32 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { clearProgram, programRunning } from '../actions';
-import { botAPI } from '../api/BotAPI';
+import { clearProgram, programRunning, programFinished, moveBotLeft, moveBotRight } from '../actions';
+import { botConstants } from '../constants';
 import { connect } from 'react-redux';
 import '../stylesheets/program.css';
 
 class Program extends Component {
 
-  componentDidMount() {
-    //this.props.clearProgram();
+  runProgram = (program, callback) => {
+    Array.prototype.delayedForEach = function(callback, timeout, thisArg){
+      var i = 0, l = this.length, self = this,
+        caller = function(){
+          callback.call(thisArg || self, self[i], i, self);
+          (++i < l) && setTimeout(caller, timeout);
+        };
+      caller();
+    };
+    program.delayedForEach(funktion => {
+      switch (funktion.bot_action) {
+        case botConstants.MOVE_BOT_RIGHT:
+          return this.props.moveBotRight();
+        case botConstants.MOVE_BOT_LEFT:
+          return this.props.moveBotLeft();
+        default:
+          return null
+      }
+    }, 1800);
+    callback();
   }
 
   handleRunProgram = () => {
@@ -16,7 +34,9 @@ class Program extends Component {
     const funkyProgram = _.map(this.props.program.programFunktions, programFunktion => {
       return this.props.funktions[programFunktion.funktion_id]
     })
-    botAPI.runProgram( funkyProgram );
+    this.runProgram(funkyProgram, () => {
+      this.props.programFinished();
+    });
   }
 
   renderProgramFunktions = () => {
@@ -38,8 +58,9 @@ class Program extends Component {
           {this.renderProgramFunktions()}
           <div className="program_funktion">function</div>
         </div>
-        <div className="mod">
+        <div className="mod btn-group">
           <button onClick={this.handleRunProgram} disabled={program.isRunning}>Run Program</button>
+          <button className="btn-red" onClick={e => {this.props.clearProgram()}} disabled={program.isRunning}>Clear Program</button>
         </div>
       </div>
     )
@@ -51,4 +72,4 @@ function mapStateToProps(state) {
   return { program, funktions };
 }
 
-export default connect(mapStateToProps, { clearProgram, programRunning })(Program);
+export default connect(mapStateToProps, { clearProgram, programRunning, programFinished, moveBotLeft, moveBotRight })(Program);
